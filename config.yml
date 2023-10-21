@@ -1,0 +1,52 @@
+deberta-base:
+  model_name: microsoft/deberta-v3-base
+  accelerator: "gpu"
+  batch_size: 4
+  max_epochs: 2
+  lr_transformer: 0.000025
+  lr_head: 0.000025
+  weight_decay: 1.0
+  lr_decay: 0.5
+  num_training_steps: 5373
+  val_check_interval: 0.25
+  apply_dif_lr: True
+  swa: False
+  swa_lr: 0.000000025
+  precision: 16
+  max_length: 512
+  accumulate_grad_batches: 1
+
+deberta-large:
+  model_name: microsoft/deberta-v3-large
+  accelerator: "gpu"
+  batch_size: 4
+  max_epochs: 5
+  lr_transformer: 0.000025
+  lr_head: 0.000025
+  weight_decay: 1 
+  lr_decay: 0.5
+  val_check_interval: 0.05
+  apply_dif_lr: False
+  swa: False
+  swa_lr: 0.000025
+  precision: "16-mixed"
+  max_length: 1536
+  accumulate_grad_batches: 1
+
+deberta-large-squad2:
+  model_name: deepset/deberta-v3-large-squad2 
+  accelerator: "gpu"
+  batch_size: 4
+  max_epochs: 4
+  lr_transformer: 0.000025
+  lr_head: 0.0001
+  weight_decay: 1.0
+  lr_decay: 0.5
+  num_training_steps: 5373
+  val_check_interval: 0.25
+  apply_dif_lr: True
+  swa: True
+  swa_lr: 0.0000025
+  precision: 16
+  max_length: 768
+  accumulate_grad_batches: 1

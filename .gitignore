@@ -1,0 +1,7 @@
+model
+data
+.env
+.ipynb_checkpoints
+node_modules
+*.json
+notebooks
